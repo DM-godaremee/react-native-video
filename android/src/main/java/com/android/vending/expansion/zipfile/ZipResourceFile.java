@@ -334,7 +334,7 @@ public class ZipResourceFile {
         }
 
         if (eocdIdx < 0) {
-            Log.d(LOG_TAG, "Zip: EOCD not found, " + zipFileName + " is not zip");
+            // Log.d(LOG_TAG, "Zip: EOCD not found, " + zipFileName + " is not zip");
         }
 
         /*

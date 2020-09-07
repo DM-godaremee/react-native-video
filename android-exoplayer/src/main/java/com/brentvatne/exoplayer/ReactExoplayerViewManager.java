@@ -103,7 +103,7 @@ public class ReactExoplayerViewManager extends ViewGroupManager<ReactExoplayerVi
 
     @ReactProp(name = PROP_SRC)
     public void setSrc(final ReactExoplayerView videoView, @Nullable ReadableMap src) {
-        Log.d("SetSrc", "Set Source");
+        // Log.d("SetSrc", "Set Source");
         Context context = videoView.getContext().getApplicationContext();
         String uriString = src.hasKey(PROP_SRC_URI) ? src.getString(PROP_SRC_URI) : null;
         String extension = src.hasKey(PROP_SRC_TYPE) ? src.getString(PROP_SRC_TYPE) : null;
@@ -125,7 +125,7 @@ public class ReactExoplayerViewManager extends ViewGroupManager<ReactExoplayerVi
                     String drmLicenseServer = drm.hasKey(PROP_SRC_DRM_LICENSESERVER) ? drm.getString(PROP_SRC_DRM_LICENSESERVER) : null;
                     ReadableMap drmHeaders = drm.hasKey(PROP_SRC_DRM_HEADERS) ? drm.getMap(PROP_SRC_DRM_HEADERS) : null;
                     if (drmType != null && drmLicenseServer != null && Util.getDrmUuid(drmType) != null) {
-                        Log.d("setDrmType", drmType);
+                        // Log.d("setDrmType", drmType);
                         UUID drmUUID = Util.getDrmUuid(drmType);
                         videoView.setDrmType(drmUUID);
                         videoView.setDrmLicenseUrl(drmLicenseServer);
@@ -139,7 +139,7 @@ public class ReactExoplayerViewManager extends ViewGroupManager<ReactExoplayerVi
                             }
                             videoView.setDrmLicenseHeader(drmKeyRequestPropertiesList.toArray(new String[0]));
                         }
-                        Log.d("Disabling TextureView (needed for DRM)");
+                        // Log.d("Disabling TextureView (needed for DRM)");
                         videoView.setUseTextureView(false);
                     }
                 }

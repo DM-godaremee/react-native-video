@@ -224,7 +224,7 @@ class ReactExoplayerView extends FrameLayout implements
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        Log.d("onAttachedToWindow", "drm url");
+        // Log.d("onAttachedToWindow", "drm url");
         initializePlayer();
     }
 
@@ -275,7 +275,7 @@ class ReactExoplayerView extends FrameLayout implements
 
     // Internal methods
     private void initializePlayer() {
-        Log.d("initializePlayer", "drm url");
+        // Log.d("initializePlayer", "drm url");
         if (player == null) {
             TrackSelection.Factory videoTrackSelectionFactory = new AdaptiveTrackSelection.Factory(BANDWIDTH_METER);
             trackSelector = new DefaultTrackSelector(videoTrackSelectionFactory);
@@ -294,7 +294,7 @@ class ReactExoplayerView extends FrameLayout implements
                     int errorStringId = Util.SDK_INT < 18 ? R.string.error_drm_not_supported
                             : (e.reason == UnsupportedDrmException.REASON_UNSUPPORTED_SCHEME
                             ? R.string.error_drm_unsupported_scheme : R.string.error_drm_unknown);
-                    Log.d("Drm Info", getResources().getString(errorStringId));
+                    // Log.d("Drm Info", getResources().getString(errorStringId));
                     return;
                 }
             }
@@ -592,7 +592,7 @@ class ReactExoplayerView extends FrameLayout implements
                 text += "unknown";
                 break;
         }
-        Log.d(TAG, text);
+        // Log.d(TAG, text);
     }
 
     private void startProgressHandler() {
@@ -1130,33 +1130,33 @@ class ReactExoplayerView extends FrameLayout implements
     }
 
     public void setDrmLicenseUrl(String licenseUrl){
-        Log.d("setDrmLicenseUrl", licenseUrl);
+        // Log.d("setDrmLicenseUrl", licenseUrl);
         this.drmLicenseUrl = licenseUrl;
     }
 
     public void setDrmLicenseHeader(String[] header){
-        Log.d("setDrmLicenseHeader", header.toString());
+        // Log.d("setDrmLicenseHeader", header.toString());
         this.drmLicenseHeader = header;
     }
 
 
     @Override
     public void onDrmKeysLoaded() {
-        Log.d("DRM Info", "onDrmKeysLoaded");
+        // Log.d("DRM Info", "onDrmKeysLoaded");
     }
 
     @Override
     public void onDrmSessionManagerError(Exception e) {
-        Log.d("DRM Info", "onDrmSessionManagerError");
+        // Log.d("DRM Info", "onDrmSessionManagerError");
     }
 
     @Override
     public void onDrmKeysRestored() {
-        Log.d("DRM Info", "onDrmKeysRestored");
+        // Log.d("DRM Info", "onDrmKeysRestored");
     }
 
     @Override
     public void onDrmKeysRemoved() {
-        Log.d("DRM Info", "onDrmKeysRestored");
+        // Log.d("DRM Info", "onDrmKeysRestored");
     }
 }
